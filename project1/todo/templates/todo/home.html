@@ -1,0 +1,14 @@
+{% extends 'todo/layout.html' %}
+
+{% block content %}
+    <h1>Lista tareas</h1>
+    <ul>
+    {% for tarea in tareas %}
+        <li>{{ tarea }}</li>
+        <a class="btn btn-primary" href="{% url 'eliminar' tarea.id %}" role="button">Eliminar</a>
+        <button><a href="{% url 'editar' tarea.id %}">Editar</a></button>
+        
+    {% endfor %}    
+
+    </ul>
+{% endblock %}
